@@ -112,7 +112,7 @@ $dt_atual = strftime('1 %h, %Y', strtotime('today'));
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/layout/top-nav.html" class="nav-link">
+                                    <a href="index.php?action=users" class="nav-link">
                                         <i class="fa fa-users nav-icon"></i>
                                         <p>Usuários</p>
                                     </a>

@@ -15,6 +15,8 @@
         <link rel="stylesheet" href="./Assets/template/plugins/fontawesome-free/css/all.min.css">
         <!-- Theme style -->
         <link rel="stylesheet" href="./Assets/template/dist/css/adminlte.min.css">
+        <!--Jquery-->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         
         <!-- icheck bootstrap -->
         <link rel="stylesheet" href="./Assets/template/plugins/icheck-bootstrap/icheck-bootstrap.min.css">

@@ -10,6 +10,7 @@ include_once './View/Login/Login.View.php';
 include_once './View/Register/Register.View.php';
 include_once './View/Termos/TermosPolitica.View.php';
 include_once './View/Dashboard/Dashboard.View.php';
+include_once './View/Dashboard/Users.View.php';
 //include_once './View/Perfil/Perfil.View.php';
 include_once './View/Home/Home.View.php';
 include_once './View/Geral/Geral.View.php';
