@@ -1,3 +1,5 @@
+        </div>
+    </body>
     <!-- jQuery -->
     <script src="./Assets/template/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
