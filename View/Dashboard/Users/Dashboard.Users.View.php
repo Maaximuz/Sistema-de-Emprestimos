@@ -76,7 +76,9 @@ $controller = new ControllerUsers();
                                           <td>'.$dt_register.'</td>
                                           <td>'.$status.'</td>
                                           <td>'.$name_permission.'</td>
-                                          <td>Ações</td>';
+                                          <td>
+                                            <a href="#" onClick="inactiveUser()"><i class="fa fa-trash">
+                                          </td>';
                                 }
                                 ?>
                                   </tr>
@@ -90,5 +92,22 @@ $controller = new ControllerUsers();
         </section>
     </div>
 </div>
+<script>
+    function inactiveUser() {
+            $.ajax({
+                url: "index.php?action=inactiveuser?id=<?=$id?>",
+                type: "POST",
+                success: function(){
+                    toastr.success('Usuário removido com sucesso.');
+                    setInterval(function(){
+                        location.reload();
+                    }, 3000);
+                },
+                error: function(){
+                  toastr.error( "Ocorreu um erro inesperado, entrar em contato com a administração do sistema!" );
+                }
+            });
+        }
+</script>
 
 

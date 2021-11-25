@@ -27,6 +27,5 @@
         <!-- Toastr -->
         <link rel="stylesheet" href="./Assets/template/plugins/toastr/toastr.min.css">
     </head>
-    <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
-        <div class="wrapper">
+    <body>
     

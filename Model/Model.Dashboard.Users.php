@@ -38,4 +38,15 @@ class ModelUsers {
         
         return $datauser;
     }
+    
+    public function inactiveuser($id){
+        $db = new ConfigDB();
+        $m_con = $db->conectMySqli();
+        
+        $sql = 'update users set dt_inactive = NOW() WHERE id = '.$id;
+        
+        $result = mysqli_query($m_con, $sql);
+        
+        return $result;
+    }
 }

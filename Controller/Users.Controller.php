@@ -17,4 +17,10 @@ class ControllerUsers {
         $model = new ModelUsers();
         return $model->datauser();
     }
+    
+    public function inactiveuser($id) {
+    
+        $model = new ModelUsers();
+        return $model->inactiveuser($id);
+    }
 }

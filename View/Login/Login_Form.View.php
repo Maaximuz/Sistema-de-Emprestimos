@@ -1,6 +1,3 @@
-<?php 
-
-?>
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="card card-outline card-primary">
