@@ -2,6 +2,8 @@
 setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
 date_default_timezone_set('America/Sao_Paulo');
 $dt_atual = strftime('1 %h, %Y', strtotime('today'));
+
+
 ?>
 <div class="content-wrapper">
     <div class="content-header">

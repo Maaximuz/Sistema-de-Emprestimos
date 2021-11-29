@@ -78,7 +78,7 @@
                 <img src="./Assets/template/dist/img/avatar5.png" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Diogo César</a>
+                <a href="index.php?action=profile&id=<?php echo $_SESSION['user_id']; ?>" class="d-block">Diogo César</a>
             </div>
         </div>
         <div class="form-inline">
@@ -111,13 +111,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                            <a href="index.php?action=permissions" class="nav-link">
                                 <i class="fa fa-address-card nav-icon"></i>
                                 <p>Permissões</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/layout/boxed.html" class="nav-link">
+                            <a href="index.php?action=items" class="nav-link">
                                 <i class="fa fa-boxes nav-icon"></i>
                                 <p>Itens</p>
                             </a>

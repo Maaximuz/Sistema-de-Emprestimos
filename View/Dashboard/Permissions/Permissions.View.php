@@ -1,12 +1,12 @@
 <?php
 
-class UsersView {
+class PermissionsView {
   
-    public function users() {
+    public function permissions() {
             
             include './View/Geral/Top.View.php';
             include './View/Geral/MenuAdmin.View.php';
-            include 'Dashboard.Users.View.php';
+            include 'Dashboard.Permissions.View.php';
             include './View/Geral/Footer.View.php';
     }
 }

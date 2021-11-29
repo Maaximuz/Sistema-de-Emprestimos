@@ -1,5 +1,5 @@
 <?php
-$controller = new ControllerUsers();
+$controller = new ControllerPermissions();
 
 setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
 date_default_timezone_set('America/Sao_Paulo');
@@ -10,7 +10,7 @@ date_default_timezone_set('America/Sao_Paulo');
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Usuários</h1>
+                        <h1 class="m-0">Permissões</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -27,7 +27,6 @@ date_default_timezone_set('America/Sao_Paulo');
                     <div class="col-12">
                         <div class="card">
                           <div class="card-header">
-                            <h3 class="card-title">Registros</h3>
                             <div class="card-tools">
                               <div class="input-group input-group-sm" style="width: 150px;">
                                 <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
@@ -44,48 +43,42 @@ date_default_timezone_set('America/Sao_Paulo');
                               <thead>
                                 <tr>
                                   <th>ID</th>
-                                  <th>Usuário</th>
-                                  <th>E-mail</th>
+                                  <th>Permissão</th>
+                                  <th>Registrado Por</th>
                                   <th>Data de Registro</th>
                                   <th>Status</th>
-                                  <th>Permissão</th>
                                   <th>Ações</th>
                                 </tr>
                               </thead>
                               <tbody>
-                                  
                                 <?php 
-                                $datauser = $controller->datauser();
+                                $datapermission = $controller->datapermission();
 
-                                foreach ($datauser as $user){
-                                    $id = $user['id'];
-                                    $username = $user['username'];
-                                    $email = $user['email'];
-                                    $permission = $user['permission'];
-                                    $dt_register = $user['dt_register'];
-                                    $dt_inactive = $user['dt_inactive'];
+                                foreach ($datapermission as $permission){
+                                    $id = $permission['id'];
+                                    $name_permission = $permission['name_permission'];
+                                    $username = $permission['username'];
+                                    $dt_register = $permission['dt_register'];
+                                    $user_inactive = $permission['user_inactive'];
+                                    $dt_inactive = $permission['dt_inactive'];
                                     if($dt_inactive == ''){
                                         $status = 'Ativo';
                                     }else{
                                         $status = 'Inativo';
                                     }
-                                    $id_permission = $user['id_permission'];
-                                    $name_permission = $user['name_permission'];
                                     
                                     echo '<tr>
-                                             <td>'.$id.'</td>
+                                            <td>'.$id.'</td>
+                                            <td>'.$name_permission.'</td>
                                             <td>'.$username.'</td>
-                                            <td>'.$email.'</td>
                                             <td>'.date('d/m/Y', strtotime($dt_register)).'</td>
                                             <td>'.$status.'</td>
-                                            <td>'.$name_permission.'</td>
                                             <td>
-                                              <a href="#" onClick="inactiveUser()"><i class="fa fa-trash">
+                                              <a href="#" onClick="inactivePermission()"><i class="fa fa-trash">
                                             </td>
                                         </tr>';
                                 }
                                 ?>
-                                  </tr>
                               </tbody>
                             </table>
                           </div>
@@ -99,10 +92,10 @@ date_default_timezone_set('America/Sao_Paulo');
 <script>
     function inactiveUser() {
             $.ajax({
-                url: "index.php?action=inactiveuser?id=<?=$id?>",
+                url: "index.php?action=inactivepermission?id=<?=$id?>",
                 type: "POST",
                 success: function(){
-                    toastr.success('Usuário removido com sucesso.');
+                    toastr.success('Permissão removido com sucesso.');
                     setInterval(function(){
                         location.reload();
                     }, 3000);

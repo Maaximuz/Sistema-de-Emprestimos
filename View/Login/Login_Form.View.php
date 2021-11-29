@@ -62,9 +62,12 @@
                     success: function(data){
                       toastr.warning('Verificando suas credenciais.');
                       setInterval(function(){
-                          if(data === 'true'){
+                          if(data === 'admin'){
                               toastr.success('Bem-vindo '+ username +' .');
                               window.location = 'index.php?action=dashboard';
+                          }else if(data === 'client'){
+                              toastr.success('Bem-vindo '+ username +' .');
+                              window.location = 'index.php?action=dashboardclient';
                           }else{
                               toastr.error('Usuário ou senha incorretos.');
                               window.location = 'index.php?action=login';

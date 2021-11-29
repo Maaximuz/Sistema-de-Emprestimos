@@ -1,12 +1,11 @@
 <?php
 
-class UsersView {
+class ProfileView {
   
-    public function users() {
-            
+    public function profile($id) {
             include './View/Geral/Top.View.php';
             include './View/Geral/MenuAdmin.View.php';
-            include 'Dashboard.Users.View.php';
+            include 'Profile_Form.View.php';
             include './View/Geral/Footer.View.php';
     }
 }

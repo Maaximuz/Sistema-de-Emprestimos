@@ -26,7 +26,7 @@ class ModelRegister {
         $db = new ConfigDB();
         $m_con = $db->conectMySqli();
         
-        $sql = 'INSERT INTO users(username,email,password,permission,dt_register) VALUES (\''.$username.'\',\''.$email.'\',\''.$pass.'\',3,NOW()) ';
+        $sql = 'INSERT INTO users(username,full_name,email,password,permission,dt_register) VALUES (\''.$username.'\',NULL,\''.$email.'\',\''.$pass.'\',2,NOW()) ';
         
         mysqli_query($m_con, $sql);
     }

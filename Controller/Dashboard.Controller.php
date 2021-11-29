@@ -6,9 +6,15 @@ foreach (glob($_SERVER['DOCUMENT_ROOT'] . '/ATP/Model/*.php') as $filename) {
 
 class ControllerDashboard {
 
-public function dashboard() {
+    public function dashboard() {
     
         $view = new DashboardView();
         $view->dashboard();
+    }
+    
+    public function dashboardclient() {
+    
+        $view = new DashboardClientView();
+        $view->dashboardclient();
     }
 }

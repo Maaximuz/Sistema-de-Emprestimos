@@ -20,8 +20,12 @@ class LoginController {
         $login = $model->verifylogin($username);
         
         foreach($login as $l){
-            if(password_verify($password, $l['password'])){
-                echo 'true';
+            if($l['permission'] == '1' && password_verify($password, $l['password'])){
+                $_SESSION['user_id'] = $l['id'];
+                echo 'admin';
+            }else if($l['permission'] == '2' && password_verify($password, $l['password'])){
+                $_SESSION['user_id'] = $l['id'];
+                echo 'client';
             }else{
                 echo 'false';
             }

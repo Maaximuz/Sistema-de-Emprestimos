@@ -9,7 +9,7 @@ class ModelLogin {
         $db = new ConfigDB();
         $m_con = $db->conectMySqli();
         
-        $sql = 'SELECT id,username,password FROM users WHERE username = \''.$username.'\' LIMIT 1';
+        $sql = 'SELECT id,username,password,permission FROM users WHERE username = \''.$username.'\' AND dt_inactive IS NULL LIMIT 1';
         
         $result = mysqli_query($m_con, $sql);
 
@@ -17,6 +17,7 @@ class ModelLogin {
             $id = $row['id'];
             $username = $row['username'];
             $pass = $row['password'];
+            $permission = $row['permission'];
         }
         return $result;
     }
