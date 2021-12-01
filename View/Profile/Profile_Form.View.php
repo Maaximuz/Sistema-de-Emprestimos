@@ -1,6 +1,8 @@
 <?php
 $controller = new ControllerProfile();
 
+$dashboard = $_SESSION['dashboard'];
+
 $getdatauser = $controller->getdatauser($id);
 
 foreach ($getdatauser as $user) {
@@ -24,7 +26,7 @@ date_default_timezone_set('America/Sao_Paulo');
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="index.php?action=dashboard">Home</a></li>
+                        <li class="breadcrumb-item"><a href="index.php?action=dashboard<?php if($dashboard == 'client'){ echo 'client'; }?>">Home</a></li>
                         <li class="breadcrumb-item active">Perfil do Usuário</li>
                     </ol>
                 </div>

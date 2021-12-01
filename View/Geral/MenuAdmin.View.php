@@ -1,3 +1,18 @@
+<?php
+$controller = new ControllerDashboard();
+$user_id = $_SESSION['user_id'];
+
+$getdatauser = $controller->getdatauser($user_id);
+
+foreach ($getdatauser as $user) {
+    $id = $user['id'];
+    $username = $user['username'];
+    $full_name = $user['full_name'];
+    $email = $user['email'];
+    $dt_register = $user['dt_register'];
+    $name_permission = $user['name_permission'];
+}
+?>
 <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__wobble" src="./Assets/template/dist/img/LittleThings.png" alt="LittleThings" height="60" width="60">
 </div>
@@ -9,57 +24,8 @@
         <li class="nav-item d-none d-sm-inline-block">
             <a href="index.php?action=dashboard" class="nav-link">Home</a>
         </li>
-        <li class="nav-item d-none d-sm-inline-block">
-            <a href="index.php?action=contact" class="nav-link">Contato</a>
-        </li>
     </ul>
     <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-            <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-                <i class="fas fa-search"></i>
-            </a>
-            <div class="navbar-search-block">
-                <form class="form-inline">
-                    <div class="input-group input-group-sm">
-                        <input class="form-control form-control-navbar" type="search" placeholder="Busca" aria-label="Search">
-                        <div class="input-group-append">
-                            <button class="btn btn-navbar" type="submit">
-                                <i class="fas fa-search"></i>
-                            </button>
-                            <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#">
-                <i class="far fa-bell"></i>
-                <span class="badge badge-warning navbar-badge">15</span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <span class="dropdown-item dropdown-header">15 Notificações</span>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                    <i class="fas fa-envelope mr-2"></i> 4 novas mensagens
-                    <span class="float-right text-muted text-sm">3 minutos</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                    <i class="fas fa-users mr-2"></i> 8 pedidos de amizade
-                    <span class="float-right text-muted text-sm">12 horas</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                    <i class="fas fa-file mr-2"></i> 3 novos relatórios
-                    <span class="float-right text-muted text-sm">2 dias</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item dropdown-footer">Ver todas notificações</a>
-            </div>
-        </li>
         <li class="nav-item">
             <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                 <i class="fas fa-expand-arrows-alt"></i>
@@ -78,7 +44,7 @@
                 <img src="./Assets/template/dist/img/avatar5.png" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="index.php?action=profile&id=<?php echo $_SESSION['user_id']; ?>" class="d-block">Diogo César</a>
+                <a href="index.php?action=profile&id=<?php echo $_SESSION['user_id']; ?>" class="d-block"><?php echo $username;?></a>
             </div>
         </div>
         <div class="form-inline">

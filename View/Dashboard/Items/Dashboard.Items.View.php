@@ -82,7 +82,7 @@ $controller = new ControllerItems();
                                                         <td>'.$class_item.'</td>
                                                         <td>'.$status.'</td>
                                                         <td>'.$username.'</td>
-                                                        <td>'.$dt_register.'</td>
+                                                        <td>'.date('d/m/Y', strtotime($dt_register)).'</td>
                                                         <td>
                                                           <a href="#" onClick="inactivePermission()"><i class="fa fa-trash">
                                                         </td>

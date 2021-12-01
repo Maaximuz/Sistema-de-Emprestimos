@@ -22,9 +22,11 @@ class LoginController {
         foreach($login as $l){
             if($l['permission'] == '1' && password_verify($password, $l['password'])){
                 $_SESSION['user_id'] = $l['id'];
+                $_SESSION['dashboard'] = 'admin';
                 echo 'admin';
             }else if($l['permission'] == '2' && password_verify($password, $l['password'])){
                 $_SESSION['user_id'] = $l['id'];
+                $_SESSION['dashboard'] = 'client';
                 echo 'client';
             }else{
                 echo 'false';

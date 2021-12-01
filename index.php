@@ -12,6 +12,7 @@ include_once './View/Geral/Geral.View.php';
 include_once './View/Termos/TermosPolitica.View.php';
 include_once './View/Dashboard/Dashboard.View.php';
 include_once './View/DashboardClient/DashboardClient.View.php';
+include_once './View/DashboardClient/Loans/Loan.View.php';
 include_once './View/Dashboard/Users/Users.View.php';
 include_once './View/Dashboard/Permissions/Permissions.View.php';
 include_once './View/Dashboard/Items/Items.View.php';
